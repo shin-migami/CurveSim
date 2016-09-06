@@ -38,7 +38,7 @@ public:
 	//Bitset is set to size 64 by default
 	//@param  row size_t specifing the number of rows
 	//@param  col size_t specifing the number of columns
-	ReserveTable(size_t row, size_t col);
+	ReserveTable(const size_t row, const size_t col);
 
 	//Return the Initial Collision Vector of the reservation table
 	//@param  None
@@ -49,7 +49,7 @@ public:
 	//@param  stageStr a string representation of the stage
 	//@param  stageID  ID of stage to be loaded
 	//@return None
-	void add_stage(std::string stageStr, size_t stageID);
+	void add_stage(const std::string &stageStr, const size_t stageID);
 
 	//Returns is the table loaded
 	//@param  None

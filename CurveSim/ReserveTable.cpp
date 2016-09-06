@@ -3,7 +3,7 @@
 //Author      : Suvojit Manna
 //Application : CurveSim
 
-ReserveTable::ReserveTable(size_t row, size_t col)
+ReserveTable::ReserveTable(const size_t row,const size_t col)
 {
 	//Set table is not loaded
 	loaded     = false;
@@ -13,7 +13,7 @@ ReserveTable::ReserveTable(size_t row, size_t col)
 	table.resize(row);
 }
 
-void ReserveTable::add_stage(std::string stageStr, size_t stageID)
+void ReserveTable::add_stage(const std::string &stageStr,const size_t stageID)
 {
 	//Return on false call
 	if (loaded)  return;
