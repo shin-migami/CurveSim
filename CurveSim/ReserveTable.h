@@ -15,12 +15,12 @@
 #include <bitset>
 #include <vector>
 #include <string>
+#define STATES 64
 
 class ReserveTable
 {
 private:
 	//Size of Bitsets
-	static const size_t              STATES = 64;
 	std::vector<std::bitset<STATES>> table;		//Stores the reservation table
 	size_t                           load_count;//Keep count of Loaded stages
 	bool                             loaded;	//All the states are loaded
