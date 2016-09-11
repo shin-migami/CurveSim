@@ -52,17 +52,17 @@ public:
 	//Returns tail state ID
 	//@param  None
 	//@return size_t destination state ID
-	size_t to  (void);
+	const size_t to  (void);
 
 	//Returns head state ID
 	//@param  None
 	//@return size_t source state ID
-	size_t from(void);
+	const size_t from(void);
 
 	//Return latency
 	//@param  None
 	//@return size_t latency of change
-	size_t get_latency(void);
+	const size_t get_latency(void);
 
 	//Return the Edge as a string
 	//@param  None
