@@ -17,10 +17,10 @@ Edge::Edge( const std::bitset<STATES> &fromState,
 }
 
 //Return the tail state
-std::bitset<STATES> Edge::to_state(void)  {	return toState; }
+const std::bitset<STATES>& Edge::to_state(void)    { return toState;   }
 
 //Return head state
-std::bitset<STATES> Edge::from_state(void)  { return fromState; }
+const std::bitset<STATES>& Edge::from_state(void)  { return fromState; }
 
 //Return tail state ID
 size_t Edge::to(void)  { return toID; }

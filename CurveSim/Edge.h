@@ -42,12 +42,12 @@ public:
 	//Retuns the tail state
 	//@param  None
 	//@return bitset destination state
-	std::bitset<STATES> to_state  (void);
+	const std::bitset<STATES>& to_state  (void);
 
 	//Returns head state
 	//@param  None
 	//@return bitset source state
-	std::bitset<STATES> from_state(void);
+	const std::bitset<STATES>& from_state(void);
 
 	//Returns tail state ID
 	//@param  None
