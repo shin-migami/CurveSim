@@ -28,6 +28,10 @@ int main()
 	std::cout << "States  : " << G.v_count() << std::endl;
 	std::cout << "Changes : " << G.e_count() << std::endl;
 
+	for (auto vertex : G.vertex())
+		std::cout << vertex.first.to_string()
+				  << vertex.second << std::endl;
+
 	for (auto edge : G.adj(std::bitset<STATES>("1011")))
 		std::cout << edge.to_string() << std::endl;
 

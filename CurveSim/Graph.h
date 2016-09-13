@@ -56,6 +56,11 @@ public:
 	//@return const vector&  List of adjacent Edges
 	const std::vector<Edge>& adj(const std::bitset<STATES> &vertex);
 
+	//Return all vertex in the Graph
+	//@param  None
+	//@return unordered_map  Map of all vertex to ID
+	const std::unordered_map<std::bitset<STATES>, size_t>& vertex(void);
+
 	//Returns |V|
 	//@param  None
 	//@return size_t  No of Vertex

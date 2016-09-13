@@ -71,6 +71,12 @@ size_t Graph::v_count(void)  { return V; }
 //Return |E|
 size_t Graph::e_count(void)  { return E; }
 
+//Return all vertex as map vertex to ID
+const std::unordered_map<std::bitset<STATES>, size_t>& Graph::vertex(void)
+{
+	return vertexID;
+}
+
 //Return Outdegree of a vertex
 size_t Graph::out_degree(const std::bitset<STATES> &vertex)
 {
