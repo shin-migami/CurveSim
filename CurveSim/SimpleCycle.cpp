@@ -7,6 +7,7 @@
 SimpleCycle::SimpleCycle()
 {
 	loaded = false;
+	latency = 0.0f;
 }
 
 //Return true if cycle is formed
@@ -54,7 +55,7 @@ std::string SimpleCycle::to_string(void)
 }
 
 //Return average latency of cycle
-double SimpleCycle::avg_latency(void)
+float SimpleCycle::avg_latency(void)
 {
 	//Return NULL String if Cycle is not formed
 	if (!loaded)  throw std::domain_error("Cycle not closed !");
@@ -62,12 +63,10 @@ double SimpleCycle::avg_latency(void)
 }
 
 //Comparator functor for Simple Cycle Class
-const bool SimpleCycle::operator()(SimpleCycle& L, SimpleCycle& R)
+const bool SimpleCycle::operator()(SimpleCycle& L, SimpleCycle& R) const
 {
-	double a = L.avg_latency();
-	double b = R.avg_latency();
-	//Allow an error rate of 1.0/1000000
-	//Ref. The Art of Computer Programming: Seminumerical algorithms(Page 128)
-	return (a - b) > ((fabs(a) < fabs(b) 
-					? fabs(b) : fabs(a)) * (1.0 / 1000000));
+	float a = L.avg_latency();
+	float b = R.avg_latency();
+	//Return true if a > b
+	return a - b > 0;
 }

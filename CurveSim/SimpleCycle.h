@@ -1,5 +1,6 @@
 #ifndef CYCLE_H
 #define CYCLE_H
+//#define TEST_CYCLE_H
 
 //Author      : Suvojit Manna
 //Application : CurveSim
@@ -19,7 +20,7 @@ private:
 	//Store as a Vector of Edges
 	std::vector<Edge> cycle;
 	bool              loaded;
-	double            latency;
+	float             latency;
 public:
 	//Instansiate objects
 	SimpleCycle();
@@ -49,14 +50,14 @@ public:
 	//Return average latency of cycle
 	//@param  None
 	//@return avg_latency double  Average Latency of Cycle
-	double avg_latency(void);
+	float avg_latency(void);
 
 	//Comparator functor to comapre average latency
 	//Compares two objects of the class and return
 	//true if left's latency is greater than right's
 	//@param  that SimpleCycle  obj to be compared
 	//@return bool True if this greater than that
-	const bool operator()(SimpleCycle& L,SimpleCycle& R);
+	const bool operator()(SimpleCycle& L,SimpleCycle& R) const;
 };
 
 #endif
