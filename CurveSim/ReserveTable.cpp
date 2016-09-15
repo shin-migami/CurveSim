@@ -63,14 +63,30 @@ void ReserveTable::calc_ICV(void)
 				ICV.set(j);
 		}
 	}
+	for (size_t j = 1; j < col; j++)
+	{
+		if (ICV.test(j))  forbidden.push_back(j);
+		else              permissible.push_back(j);
+	}
 }
 
 std::string ReserveTable::get_ICV(void)
 {
 	//Return ICV as String
-	std::string ICVString = ICV.to_string();
-	//TODO : Format to Correct string
+	std::string ICVString = (ICV >> 1).to_string().substr(STATES - col + 1);
 	return ICVString;
+}
+
+//Return all permissible Latency
+std::vector<size_t>& ReserveTable::get_permissible(void)
+{
+	return permissible;
+}
+
+//Return all forbidden Latency
+std::vector<size_t>& ReserveTable::get_forbidden(void)
+{
+	return forbidden;
 }
 
 size_t ReserveTable::timeslot_count(void)
@@ -82,6 +98,6 @@ std::string ReserveTable::to_string(void)
 {
 	std::string tableStr;
 	for (size_t i = 0; i < row; i++)
-		tableStr += table[i].to_string() + "\n";
+		tableStr += table[i].to_string().substr(STATES - col) + "\n";
 	return tableStr;
 }

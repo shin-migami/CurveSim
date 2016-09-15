@@ -1,5 +1,6 @@
 #ifndef RESERVETABLE_H
 #define RESERVETABLE_H
+//#define TEST_RESERVETABLE_H
 
 //Author      : Suvojit Manna
 //Application : CurveSim
@@ -22,6 +23,8 @@ class ReserveTable
 private:
 	//Size of Bitsets
 	std::vector<std::bitset<STATES>> table;		//Stores the reservation table
+	std::vector<size_t>              permissible;
+	std::vector<size_t>              forbidden;
 	size_t                           load_count;//Keep count of Loaded stages
 	bool                             loaded;	//All the states are loaded
 	size_t                           row;		//No of rows in use
@@ -60,6 +63,16 @@ public:
 	//@param  None
 	//@return size_t  No of time slot in use
 	size_t timeslot_count(void);
+
+	//Return all permissible Latency
+	//@param  None
+	//@return vector  A vector of all permissible Latency
+	std::vector<size_t>& get_permissible(void);
+
+	//Return all forbidden Latency
+	//@param  None
+	//@return vector  A vector of all forbidden Latency
+	std::vector<size_t>& get_forbidden(void);
 
 	//Returns the Reservation Table as a String Object
 	//@param  None
