@@ -91,6 +91,12 @@ size_t Graph::in_degree(const std::bitset<STATES> &vertex)
 	return inDegree[vID];
 }
 
+//Return true if Vertex is Present
+bool Graph::has_vertex(const std::bitset<STATES> &vertex)
+{
+	return vertexID.find(vertex) != vertexID.end();
+}
+
 //Return String representation of the Graph
 std::string Graph::to_string(void)
 {

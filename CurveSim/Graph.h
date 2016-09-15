@@ -81,6 +81,11 @@ public:
 	//@return size_t  Outdegree of vertex
 	size_t out_degree(const std::bitset<STATES> &vertex);
 
+	//Return true if Vertex is Present
+	//@param  vertex bitset The vertex in check
+	//@return boolean True if present
+	bool has_vertex(const std::bitset<STATES> &vertex);
+
 	//Return String representation of the Graph
 	//@param  None
 	//@return string  String representation of the Graph
