@@ -65,7 +65,7 @@ public:
 	//Return Greedy Cycle with minimum Latency
 	//@param  None
 	//Return SimpleCycle the Greedy cycle leading to MAL
-	const SimpleCycle& min_greedy(void) const;
+	SimpleCycle& min_greedy(void);
 };
 
 #endif
