@@ -61,6 +61,11 @@ public:
 	//@param  None
 	//@return vector<SimpleCycle>  All Greedy Cycles
 	const std::vector<SimpleCycle>& greedy_cycles(void);
+
+	//Return Greedy Cycle with minimum Latency
+	//@param  None
+	//Return SimpleCycle the Greedy cycle leading to MAL
+	const SimpleCycle& min_greedy(void) const;
 };
 
 #endif

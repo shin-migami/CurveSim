@@ -97,3 +97,10 @@ const std::vector<SimpleCycle>& CycleFinder::greedy_cycles(void)
 {
 	return greedy;
 }
+
+//Return Greedy Cycle with minimum Latency
+const SimpleCycle& CycleFinder::min_greedy(void) const
+{
+	//Minumum Average Latency is stored at top
+	return greedy[0];
+}
