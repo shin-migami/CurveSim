@@ -1,5 +1,6 @@
 #ifndef EDGE_H
 #define EDGE_H
+//#define TEST_EDGE_H
 
 //Author      : Suvojit Manna
 //Application : CurveSim
@@ -65,9 +66,9 @@ public:
 	const size_t get_latency(void);
 
 	//Return the Edge as a string
-	//@param  None
+	//@param  stateLen Length of State for formatting
 	//@return string string representation of the edge
-	std::string to_string(void);
+	std::string to_string(size_t stateLen);
 };
 
 #endif

@@ -1,5 +1,6 @@
 #ifndef GRAPH_H
 #define GRAPH_H
+//#define TEST_GRAPH_H
 
 //Author      : Suvojit Manna
 //Application : CurveSim
@@ -87,9 +88,9 @@ public:
 	bool has_vertex(const std::bitset<STATES> &vertex);
 
 	//Return String representation of the Graph
-	//@param  None
+	//@param  stateLen Length of State for formatting
 	//@return string  String representation of the Graph
-	std::string to_string(void);
+	std::string to_string(size_t stateLen);
 };
 
 #endif

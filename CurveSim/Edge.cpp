@@ -32,15 +32,15 @@ const size_t Edge::from(void)  { return fromID; }
 const size_t Edge::get_latency(void)  { return latency; }
 
 //Return the Edge as a string
-std::string Edge::to_string(void)
+std::string Edge::to_string(size_t stateLen)
 {
 	std::string edgeStr;
 	//Build the string
-	edgeStr = fromState.to_string()
-			+ " -("
-			+ std::to_string(latency)
-			+ ")-> "
-			+ toState.to_string();
+	edgeStr = fromState.to_string().substr(STATES - stateLen)
+		    + " -("
+		    + std::to_string(latency)
+		    + ")-> "
+		    + toState.to_string().substr(STATES - stateLen);
 	return edgeStr;
 	//TODO : Format string
 }

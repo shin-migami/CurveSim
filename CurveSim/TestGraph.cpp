@@ -38,7 +38,7 @@ int main()
 	std::cout << G.in_degree (std::bitset<STATES>("1011")) << std::endl;
 	std::cout << G.out_degree(std::bitset<STATES>("1011")) << std::endl;
 
-	std::cout << G.to_string() << std::endl;
+	std::cout << G.to_string(4) << std::endl;
 	return 0;
 }
 #endif

@@ -98,17 +98,19 @@ bool Graph::has_vertex(const std::bitset<STATES> &vertex)
 }
 
 //Return String representation of the Graph
-std::string Graph::to_string(void)
+std::string Graph::to_string(size_t stateLen)
 {
 	std::string graphStr;
 	//For all vertex
 	for (auto &state : vertexID)
 	{
 		//TODO : Format String
-		graphStr += "State : " + state.first.to_string() + "\n";
+		graphStr += "State : "
+			     + state.first.to_string().substr(STATES - stateLen) 
+			     + "\n";
 		//For all edges of the vertex
 		for (auto &edge : G[state.second])
-			graphStr += edge.to_string() + "\n";
+			graphStr += edge.to_string(stateLen) + "\n";
 	}
 	return graphStr;
 }

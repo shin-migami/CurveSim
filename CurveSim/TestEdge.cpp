@@ -12,7 +12,7 @@ int main()
 	std::cout << testEdge.to()         << std::endl;
 	std::cout << testEdge.from_state() << std::endl;
 	std::cout << testEdge.to_state()   << std::endl;
-	std::cout << testEdge.to_string()  << std::endl;
+	std::cout << testEdge.to_string(4)  << std::endl;
 	return 0;
 }
 #endif
