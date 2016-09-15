@@ -56,6 +56,11 @@ public:
 	//@return loaded bool indicating if the table is loaded
 	bool is_loaded(void);
 
+	//Return size of time slot
+	//@param  None
+	//@return size_t  No of time slot in use
+	size_t timeslot_count(void);
+
 	//Returns the Reservation Table as a String Object
 	//@param  None
 	//@return table std::string of the reservation table

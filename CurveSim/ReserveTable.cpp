@@ -73,6 +73,11 @@ std::string ReserveTable::get_ICV(void)
 	return ICVString;
 }
 
+size_t ReserveTable::timeslot_count(void)
+{
+	return col;
+}
+
 std::string ReserveTable::to_string(void)
 {
 	std::string tableStr;
