@@ -64,6 +64,11 @@ public:
 	//@return size_t  No of time slot in use
 	size_t timeslot_count(void);
 
+	//Return No of stages
+	//@param  None
+	//@return size_t  No of stages in use
+	size_t stage_count(void);
+
 	//Return all permissible Latency
 	//@param  None
 	//@return vector  A vector of all permissible Latency

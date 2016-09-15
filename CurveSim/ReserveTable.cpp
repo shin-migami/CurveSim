@@ -89,6 +89,13 @@ std::vector<size_t>& ReserveTable::get_forbidden(void)
 	return forbidden;
 }
 
+//Return No of stages
+size_t ReserveTable::stage_count(void)
+{
+	return row;
+}
+
+//Return size of time slot
 size_t ReserveTable::timeslot_count(void)
 {
 	return col;
