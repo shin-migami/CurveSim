@@ -64,7 +64,7 @@ void CycleFinder::dfs(Graph& G,
 			//Cycle is found for either self loop
 			//or when tail of path is equal to head
 			c.add_edge(edge);
-			fromV.push_back(c);
+			if (c.is_cycle())  fromV.push_back(c);
 			c = SimpleCycle();
 		}
 	}
