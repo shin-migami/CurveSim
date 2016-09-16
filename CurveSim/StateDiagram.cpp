@@ -7,11 +7,9 @@
 StateDiagram::StateDiagram(ReserveTable& resrcMat) : latencyCycle(stateDiag)
 {
 	//Get Maximum ICV Length
-	stateLen = resrcMat.timeslot_count() - 1;
+	stateLen = resrcMat.get_ICV().length();
 	std::deque<std::bitset<STATES>> stateQ;
 	std::bitset<STATES> icv(resrcMat.get_ICV());
-	//Remove Deprecated Bit
-	icv >>= 1;
 	//Add ICV to Graph as vertex
 	stateDiag.add_vertex(icv);
 	//Push ICV to state queue
@@ -21,7 +19,7 @@ StateDiagram::StateDiagram(ReserveTable& resrcMat) : latencyCycle(stateDiag)
 	{
 		std::bitset<STATES> state = stateQ.front();
 		//Check for all possible latency config
-		for (size_t p = 0; p < resrcMat.timeslot_count(); ++p)
+		for (size_t p = 0; p <= stateLen; ++p)
 		{
 			//If latency is prmissible
 			if (!state.test(p))

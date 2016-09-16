@@ -29,6 +29,7 @@ private:
 	bool                             loaded;	//All the states are loaded
 	size_t                           row;		//No of rows in use
 	size_t                           col;		//No of cols in use
+	size_t                           icvLen;	//Store Length of ICV
 	std::bitset<STATES>              ICV;		//The Initial Collision Vector
 
 	//Calculate the Initial collision Vector if the Table is loaded

@@ -49,6 +49,7 @@ void ReserveTable::calc_ICV(void)
 
 	std::bitset<STATES> slideVector,
 						checkVector;
+	icvLen = 0;
 	for (size_t i = 0; i < row; i++)
 	//Repeat for all stages
 	{
@@ -59,11 +60,13 @@ void ReserveTable::calc_ICV(void)
 			checkVector = table[i] & slideVector;
 			//Check if any bit is set
 			if (checkVector.any())
-				//Set the ith bit
+			{	//Set the ith bit
 				ICV.set(j);
+				if (j > icvLen)  icvLen = j;
+			}
 		}
 	}
-	for (size_t j = 1; j < col; j++)
+	for (size_t j = 1; j <= icvLen; j++)
 	{
 		if (ICV.test(j))  forbidden.push_back(j);
 		else              permissible.push_back(j);
@@ -73,7 +76,7 @@ void ReserveTable::calc_ICV(void)
 std::string ReserveTable::get_ICV(void)
 {
 	//Return ICV as String
-	std::string ICVString = (ICV >> 1).to_string().substr(STATES - col + 1);
+	std::string ICVString = (ICV >> 1).to_string().substr(STATES - icvLen);
 	return ICVString;
 }
 
