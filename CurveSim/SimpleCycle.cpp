@@ -43,7 +43,7 @@ size_t SimpleCycle::length(void)
 std::string SimpleCycle::to_string(void)
 {
 	//Return Error if Cycle is not formed
-	if (!loaded)  throw std::domain_error("Cycle not closed !");
+	//if (!loaded)  throw std::domain_error("Cycle not closed !");
 
 	std::string cycleStr("(");
 	for (auto &edge : cycle)
@@ -58,7 +58,7 @@ std::string SimpleCycle::to_string(void)
 float SimpleCycle::avg_latency(void)
 {
 	//Return NULL String if Cycle is not formed
-	if (!loaded)  throw std::domain_error("Cycle not closed !");
+	//if (!loaded)  throw std::domain_error("Cycle not closed !");
 	return latency;
 }
 
