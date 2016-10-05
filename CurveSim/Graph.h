@@ -55,22 +55,22 @@ public:
 	//Return all adjacent Edges of a vetex
 	//@param  vertex bitset  The vertex in check
 	//@return const vector&  List of adjacent Edges
-	const std::vector<Edge>& adj(const std::bitset<STATES> &vertex);
+	const std::vector<Edge>& adj(const std::bitset<STATES> &vertex) const;
 
 	//Return all vertex in the Graph
 	//@param  None
 	//@return unordered_map  Map of all vertex to ID
-	const std::unordered_map<std::bitset<STATES>, size_t>& vertex(void);
+	const std::unordered_map<std::bitset<STATES>, size_t>& vertex(void) const;
 
 	//Returns |V|
 	//@param  None
 	//@return size_t  No of Vertex
-	size_t v_count(void);
+	size_t v_count(void) const;
 
 	//Returns |E|
 	//@param  None
 	//@return size_t  No of Edges
-	size_t e_count(void);
+	size_t e_count(void) const;
 
 	//Reutrns the no of incoming edge of a vertex
 	//@param  vertex bitset  The vertex in check
@@ -90,7 +90,7 @@ public:
 	//Return String representation of the Graph
 	//@param  stateLen Length of State for formatting
 	//@return string  String representation of the Graph
-	std::string to_string(size_t stateLen);
+	std::string to_string(size_t stateLen) const;
 };
 
 #endif

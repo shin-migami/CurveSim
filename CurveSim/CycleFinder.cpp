@@ -4,7 +4,7 @@
 //Application : CurveSim
 
 //Instantiate and find all Cycles
-CycleFinder::CycleFinder(Graph& G)
+CycleFinder::CycleFinder(const Graph& G)
 {
 	onStack.assign(G.v_count(), false);
 	ignore.assign(G.v_count(),  false);
@@ -34,7 +34,7 @@ CycleFinder::CycleFinder(Graph& G)
 }
 
 //Find and Enumerate over all cycles
-void CycleFinder::dfs(Graph& G,
+void CycleFinder::dfs(const Graph& G,
 					  std::pair<std::bitset<STATES>, size_t> vMap,
 					  std::vector<SimpleCycle>& fromV,
 					  SimpleCycle& c)
@@ -75,25 +75,25 @@ void CycleFinder::dfs(Graph& G,
 }
 
 //Return Simple Cycle Count
-size_t CycleFinder::simple_cycle_count(void)
+size_t CycleFinder::simple_cycle_count(void) const
 {
 	return simple.size();
 }
 
 //Return simple Cycle Count
-size_t CycleFinder::greedy_cycle_count(void)
+size_t CycleFinder::greedy_cycle_count(void) const
 {
 	return greedy.size();
 }
 
 //Return list of Simple Cycles
-const std::vector<SimpleCycle>& CycleFinder::simple_cycles(void)
+const std::vector<SimpleCycle>& CycleFinder::simple_cycles(void) const
 {
 	return simple;
 }
 
 //Return list of Greedy Cycles
-const std::vector<SimpleCycle>& CycleFinder::greedy_cycles(void)
+const std::vector<SimpleCycle>& CycleFinder::greedy_cycles(void) const
 {
 	return greedy;
 }

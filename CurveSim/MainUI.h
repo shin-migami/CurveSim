@@ -17,22 +17,22 @@ bool fill_reserve_table(ReserveTable& initTable);
 
 void main_menu(void);
 
-void print_reserve_tab(ReserveTable& initTable);
+void print_reserve_tab(const ReserveTable& initTable);
 
-void print_permissible(ReserveTable& initTable);
+void print_permissible(const ReserveTable& initTable);
 
-void print_forbidden(ReserveTable& initTable);
+void print_forbidden(const ReserveTable& initTable);
 
-void print_ICV(ReserveTable& initTable);
+void print_ICV(const ReserveTable& initTable);
 
-void print_SID(StateDiagram& stateDiag);
+void print_SID(const StateDiagram& stateDiag);
 
-void print_simple_cycles(StateDiagram& stateDiag);
+void print_simple_cycles(const StateDiagram& stateDiag);
 
-void print_greedy_cycles(StateDiagram& stateDiag);
+void print_greedy_cycles(const StateDiagram& stateDiag);
 
-void print_MAL(StateDiagram& stateDiag);
+void print_MAL(const StateDiagram& stateDiag);
 
-void print_throughput(StateDiagram& stateDiag);
+void print_throughput(const StateDiagram& stateDiag);
 
 #endif

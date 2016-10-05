@@ -47,7 +47,7 @@ public:
 	//Return the Initial Collision Vector of the reservation table
 	//@param  None
 	//@return ICV string represntation of the Collision Vector
-	std::string get_ICV(void);
+	std::string get_ICV(void) const;
 
 	//Function to add a stage to the reservation table
 	//@param  stageStr a string representation of the stage
@@ -58,31 +58,31 @@ public:
 	//Returns is the table loaded
 	//@param  None
 	//@return loaded bool indicating if the table is loaded
-	bool is_loaded(void);
+	bool is_loaded(void) const;
 
 	//Return size of time slot
 	//@param  None
 	//@return size_t  No of time slot in use
-	size_t timeslot_count(void);
+	size_t timeslot_count(void) const;
 
 	//Return No of stages
 	//@param  None
 	//@return size_t  No of stages in use
-	size_t stage_count(void);
+	size_t stage_count(void) const;
 
 	//Return all permissible Latency
 	//@param  None
 	//@return vector  A vector of all permissible Latency
-	std::vector<size_t>& get_permissible(void);
+	const std::vector<size_t>& get_permissible(void) const;
 
 	//Return all forbidden Latency
 	//@param  None
 	//@return vector  A vector of all forbidden Latency
-	std::vector<size_t>& get_forbidden(void);
+	const std::vector<size_t>& get_forbidden(void) const;
 
 	//Returns the Reservation Table as a String Object
 	//@param  None
 	//@return table std::string of the reservation table
-	std::string to_string(void);
+	std::string to_string(void) const;
 };
 #endif

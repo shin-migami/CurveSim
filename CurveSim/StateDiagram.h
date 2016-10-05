@@ -29,32 +29,32 @@ public:
 	//And store as a graph also calculte all simple and
 	//Greedy cycles, MAL and Throughput
 	//@param  resrcMat  Resource Matrix ie the Reservation Table
-	StateDiagram(ReserveTable& resrcMat);
+	StateDiagram(const ReserveTable& resrcMat);
 
 	//Return list of Simple Cycles
 	//@param  None
 	//@return vector<SimpleCycle>  All Simple Cycles
-	const std::vector<SimpleCycle>& simple_cycles(void);
+	const std::vector<SimpleCycle>& simple_cycles(void) const;
 
 	//Return list of Greedy Cycles
 	//@param  None
 	//@return vector<SimpleCycle>  All Greedy Cycles
-	const std::vector<SimpleCycle>& greedy_cycles(void);
+	const std::vector<SimpleCycle>& greedy_cycles(void) const;
 
 	//Return MAL
 	//@param  None
 	//@return float  Return Minimum Average Latency
-	float MAL(void);
+	float MAL(void) const;
 
 	//Return Throughtput of the Pipeline
 	//@param  None
 	//return float  Retun throughput
-	float get_throughput(void);
+	float get_throughput(void) const;
 
 	//Return State Diagram as String
 	//@param  None
 	//@return string  String representation of the Graph
-	const std::string to_string(void);
+	const std::string to_string(void) const;
 };
 
 #endif

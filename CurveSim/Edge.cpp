@@ -23,16 +23,16 @@ const std::bitset<STATES>& Edge::to_state(void)    { return toState;   }
 const std::bitset<STATES>& Edge::from_state(void)  { return fromState; }
 
 //Return tail state ID
-const size_t Edge::to(void)    { return toID; }
+size_t Edge::to(void) const { return toID; }
 
 //Return head state ID
-const size_t Edge::from(void)  { return fromID; }
+size_t Edge::from(void) const { return fromID; }
 
 //Return latency
-const size_t Edge::get_latency(void)  { return latency; }
+size_t Edge::get_latency(void) const { return latency; }
 
 //Return the Edge as a string
-std::string Edge::to_string(size_t stateLen)
+std::string Edge::to_string(size_t stateLen) const
 {
 	std::string edgeStr;
 	//Build the string

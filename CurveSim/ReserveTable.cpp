@@ -33,7 +33,7 @@ void ReserveTable::add_stage(const std::string &stageStr,const size_t stageID)
 	}
 }
 
-bool ReserveTable::is_loaded(void)
+bool ReserveTable::is_loaded(void) const
 {
 	return loaded;
 }
@@ -73,7 +73,7 @@ void ReserveTable::calc_ICV(void)
 	}
 }
 
-std::string ReserveTable::get_ICV(void)
+std::string ReserveTable::get_ICV(void) const
 {
 	//Return ICV as String
 	std::string ICVString = (ICV >> 1).to_string().substr(STATES - icvLen);
@@ -81,30 +81,30 @@ std::string ReserveTable::get_ICV(void)
 }
 
 //Return all permissible Latency
-std::vector<size_t>& ReserveTable::get_permissible(void)
+const std::vector<size_t>& ReserveTable::get_permissible(void) const
 {
 	return permissible;
 }
 
 //Return all forbidden Latency
-std::vector<size_t>& ReserveTable::get_forbidden(void)
+const std::vector<size_t>& ReserveTable::get_forbidden(void) const
 {
 	return forbidden;
 }
 
 //Return No of stages
-size_t ReserveTable::stage_count(void)
+size_t ReserveTable::stage_count(void) const
 {
 	return row;
 }
 
 //Return size of time slot
-size_t ReserveTable::timeslot_count(void)
+size_t ReserveTable::timeslot_count(void) const
 {
 	return col;
 }
 
-std::string ReserveTable::to_string(void)
+std::string ReserveTable::to_string(void) const
 {
 	std::string tableStr;
 	for (size_t i = 0; i < row; i++)

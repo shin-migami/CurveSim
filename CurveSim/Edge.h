@@ -53,22 +53,22 @@ public:
 	//Returns tail state ID
 	//@param  None
 	//@return size_t destination state ID
-	const size_t to  (void);
+	size_t to  (void) const;
 
 	//Returns head state ID
 	//@param  None
 	//@return size_t source state ID
-	const size_t from(void);
+	size_t from(void) const;
 
 	//Return latency
 	//@param  None
 	//@return size_t latency of change
-	const size_t get_latency(void);
+	size_t get_latency(void) const;
 
 	//Return the Edge as a string
 	//@param  stateLen Length of State for formatting
 	//@return string string representation of the edge
-	std::string to_string(size_t stateLen);
+	std::string to_string(size_t stateLen) const;
 };
 
 #endif

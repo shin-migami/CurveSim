@@ -13,10 +13,10 @@ int main()
 
 	std::cout << tab1.to_string();
 	std::cout << tab1.get_ICV() << std::endl;
-	for (auto latency : tab1.get_forbidden())
+	for (const auto latency : tab1.get_forbidden())
 		std::cout << latency << std::endl;
 	std::cout << std::endl;
-	for (auto latency : tab1.get_permissible())
+	for (const auto latency : tab1.get_permissible())
 		std::cout << latency << std::endl;
 	return 0;
 }
