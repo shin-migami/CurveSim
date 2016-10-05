@@ -4,7 +4,7 @@
 //Application : CurveSim
 
 //Initialize StateDiagram with a Reservation Table
-StateDiagram::StateDiagram(ReserveTable& resrcMat) : latencyCycle(stateDiag)
+StateDiagram::StateDiagram(const ReserveTable& resrcMat) : latencyCycle(stateDiag)
 {
 	//Get Maximum ICV Length
 	stateLen = resrcMat.get_ICV().length();
@@ -49,31 +49,31 @@ StateDiagram::StateDiagram(ReserveTable& resrcMat) : latencyCycle(stateDiag)
 }
 
 //Return list of Simple Cycles
-const std::vector<SimpleCycle>& StateDiagram::simple_cycles(void)
+const std::vector<SimpleCycle>& StateDiagram::simple_cycles(void) const
 {
 	return latencyCycle.simple_cycles();
 }
 
 //Return list of Greedy Cycles
-const std::vector<SimpleCycle>& StateDiagram::greedy_cycles(void)
+const std::vector<SimpleCycle>& StateDiagram::greedy_cycles(void) const
 {
 	return latencyCycle.greedy_cycles();
 }
 
 //Return MAL
-float StateDiagram::MAL(void)
+float StateDiagram::MAL(void) const
 {
 	return minAvgLatency;
 }
 
 //Return Throughtput of the Pipeline
-float StateDiagram::get_throughput(void)
+float StateDiagram::get_throughput(void) const
 {
 	return throughput;
 }
 
 //Return State Diagram as String
-const std::string StateDiagram::to_string(void)
+const std::string StateDiagram::to_string(void) const
 {
 	return stateDiag.to_string(stateLen);
 }

@@ -16,7 +16,7 @@ bool SimpleCycle::is_cycle(void)  {	return loaded; }
 //Add Edge to Cycle
 //Check if Tail and Head of Cycle are Same
 //If True then lock the cycle
-void SimpleCycle::add_edge(Edge& e)
+void SimpleCycle::add_edge(const Edge& e)
 {
 	//If locked return
 	if (loaded)  return;
@@ -55,7 +55,7 @@ std::string SimpleCycle::to_string(void)
 }
 
 //Return average latency of cycle
-float SimpleCycle::avg_latency(void)
+float SimpleCycle::avg_latency(void) const
 {
 	//Return NULL String if Cycle is not formed
 	//if (!loaded)  throw std::domain_error("Cycle not closed !");
@@ -63,7 +63,7 @@ float SimpleCycle::avg_latency(void)
 }
 
 //Comparator functor for Simple Cycle Class
-const bool SimpleCycle::operator()(SimpleCycle& L, SimpleCycle& R) const
+const bool SimpleCycle::operator()(const SimpleCycle& L, const SimpleCycle& R) const
 {
 	float a = L.avg_latency();
 	float b = R.avg_latency();

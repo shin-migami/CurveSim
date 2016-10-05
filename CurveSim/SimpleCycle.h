@@ -34,7 +34,7 @@ public:
 	//Stops when intial and final vertex are same
 	//@param  e Edge  Next Edge
 	//@return None
-	void add_edge(Edge& e);
+	void add_edge(const Edge& e);
 
 	//Return length of Cycle
 	//@param  None
@@ -50,14 +50,14 @@ public:
 	//Return average latency of cycle
 	//@param  None
 	//@return avg_latency double  Average Latency of Cycle
-	float avg_latency(void);
+	float avg_latency(void) const;
 
 	//Comparator functor to comapre average latency
 	//Compares two objects of the class and return
 	//true if left's latency is greater than right's
 	//@param  that SimpleCycle  obj to be compared
 	//@return bool True if this greater than that
-	const bool operator()(SimpleCycle& L,SimpleCycle& R) const;
+	const bool operator()(const SimpleCycle& L, const SimpleCycle& R) const;
 };
 
 #endif

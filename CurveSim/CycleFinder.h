@@ -33,34 +33,34 @@ private:
 	//@param  G Graph  State Diagram as a Graph
 	//@param  v pair   Starting vertex map of v
 	//@return None
-	void dfs(Graph& G, 
+	void dfs(const Graph& G,
 			 std::pair<std::bitset<STATES>, size_t> vMap,
 			 std::vector<SimpleCycle>& fromV,
 			 SimpleCycle& c);
 
 public:
 	//Finds cycle in Weighted Directed Graph
-	CycleFinder(Graph& G);
+	CycleFinder(const Graph& G);
 
 	//Return Simple Cycle Count
 	//@param  None
 	//@return size_t  No of Simple Cycles
-	size_t simple_cycle_count(void);
+	size_t simple_cycle_count(void) const;
 
 	//Return Greedy Cycle Count
 	//@param  None
 	//@return size_t  No of Greedy Cycle
-	size_t greedy_cycle_count(void);
+	size_t greedy_cycle_count(void) const;
 
 	//Return list of Simple Cycles
 	//@param  None
 	//@return vector<SimpleCycle>  All Simple Cycles
-	const std::vector<SimpleCycle>& simple_cycles(void);
+	const std::vector<SimpleCycle>& simple_cycles(void) const;
 
 	//Return list of Greedy Cycles
 	//@param  None
 	//@return vector<SimpleCycle>  All Greedy Cycles
-	const std::vector<SimpleCycle>& greedy_cycles(void);
+	const std::vector<SimpleCycle>& greedy_cycles(void) const;
 
 	//Return Greedy Cycle with minimum Latency
 	//@param  None

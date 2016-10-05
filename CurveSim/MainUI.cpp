@@ -45,7 +45,7 @@ void main_menu(void)
 //Print Reservation Table
 //@param  initTable  The Reservation Table
 //@return None
-void print_reserve_tab(ReserveTable& initTable)
+void print_reserve_tab(const ReserveTable& initTable)
 {
 	std::cout << "Reservation Table for Non-Linear Pipeline" << std::endl;
 	std::cout << initTable.to_string() << std::endl;
@@ -54,10 +54,10 @@ void print_reserve_tab(ReserveTable& initTable)
 //Print all Permissible Latency
 //@param  initTable  The Reservation Table
 //@return None
-void print_permissible(ReserveTable& initTable)
+void print_permissible(const ReserveTable& initTable)
 {
 	std::cout << "Permissible Latency for the Pipeline" << std::endl;
-	for (auto latency : initTable.get_permissible())
+	for (const auto latency : initTable.get_permissible())
 		std::cout << latency << " ";
 	std::cout << std::endl;
 }
@@ -65,10 +65,10 @@ void print_permissible(ReserveTable& initTable)
 //Print all Forbidden Latency
 //@param  initTable  The Reservation Table
 //@return None
-void print_forbidden(ReserveTable& initTable)
+void print_forbidden(const ReserveTable& initTable)
 {
 	std::cout << "Forbidden Latency for the Pipeline" << std::endl;
-	for (auto latency : initTable.get_forbidden())
+	for (const auto latency : initTable.get_forbidden())
 		std::cout << latency << " ";
 	std::cout << std::endl;
 }
@@ -76,7 +76,7 @@ void print_forbidden(ReserveTable& initTable)
 //Print Initial Collision Vector
 //@param  initTable  The Reservation Table
 //@return None
-void print_ICV(ReserveTable& initTable)
+void print_ICV(const ReserveTable& initTable)
 {
 	std::cout << "Initial Collision Vector : <"
 		<< initTable.get_ICV()
@@ -86,7 +86,7 @@ void print_ICV(ReserveTable& initTable)
 //Print State Initiation Diagram
 //@param  stateDiag  The State Initiation Diagram
 //@return None
-void print_SID(StateDiagram& stateDiag)
+void print_SID(const StateDiagram& stateDiag)
 {
 	std::cout << "State Initiation Diagram for the Pipeline\n"
 		<< "Format : <Start State> -(Latency)-> <End State>" << std::endl;
@@ -96,7 +96,7 @@ void print_SID(StateDiagram& stateDiag)
 //Print all Simple Cycles
 //@param  stateDiag  The State Initiation Diagram
 //@return None
-void print_simple_cycles(StateDiagram& stateDiag)
+void print_simple_cycles(const StateDiagram& stateDiag)
 {
 	std::cout << "All Simple Cycles in State Diagram" << std::endl;
 	for (auto cycle : stateDiag.simple_cycles())
@@ -107,7 +107,7 @@ void print_simple_cycles(StateDiagram& stateDiag)
 //Print all Greedy Cycles
 //@param  stateDiag  The State Initiation Diagram
 //@return None
-void print_greedy_cycles(StateDiagram& stateDiag)
+void print_greedy_cycles(const StateDiagram& stateDiag)
 {
 	std::cout << "All Greedy Cycles in State Diagram" << std::endl;
 	for (auto cycle : stateDiag.greedy_cycles())
@@ -118,7 +118,7 @@ void print_greedy_cycles(StateDiagram& stateDiag)
 //Print Minimum Average Latency
 //@param  stateDiag  The State Initiation Diagram
 //@return None
-void print_MAL(StateDiagram& stateDiag)
+void print_MAL(const StateDiagram& stateDiag)
 {
 	std::cout << std::setprecision(2)
 		<< "Minimum Average Latency : "
@@ -128,7 +128,7 @@ void print_MAL(StateDiagram& stateDiag)
 //Print Pipeline Throughput
 //@param  stateDiag  The State Initiation Diagram
 //@return None
-void print_throughput(StateDiagram& stateDiag)
+void print_throughput(const StateDiagram& stateDiag)
 {
 	std::cout << std::setprecision(5)
 		<< "Pipeline Throughput : "

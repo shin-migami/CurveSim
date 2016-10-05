@@ -59,20 +59,20 @@ void Graph::add_edge(const std::bitset<STATES> &u,
 }
 
 //Return all adjacent Edges of vertex
-const std::vector<Edge>& Graph::adj(const std::bitset<STATES> &vertex)
+const std::vector<Edge>& Graph::adj(const std::bitset<STATES> &vertex) const
 {
 	size_t vID = vertexID.find(vertex)->second;
 	return G[vID];
 }
 
 //Return |V|
-size_t Graph::v_count(void)  { return V; }
+size_t Graph::v_count(void) const { return V; }
 
 //Return |E|
-size_t Graph::e_count(void)  { return E; }
+size_t Graph::e_count(void) const { return E; }
 
 //Return all vertex as map vertex to ID
-const std::unordered_map<std::bitset<STATES>, size_t>& Graph::vertex(void)
+const std::unordered_map<std::bitset<STATES>, size_t>& Graph::vertex(void) const
 {
 	return vertexID;
 }
@@ -98,7 +98,7 @@ bool Graph::has_vertex(const std::bitset<STATES> &vertex)
 }
 
 //Return String representation of the Graph
-std::string Graph::to_string(size_t stateLen)
+std::string Graph::to_string(size_t stateLen) const
 {
 	std::string graphStr;
 	//For all vertex
