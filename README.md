@@ -41,3 +41,13 @@ Enter Options :
 9 - Print Pipeline Throughput
 0 - Exit
 ```
+
+## Contributors
+<table>
+  <tr>
+    <td align=center><img width=100 src=https://avatars2.githubusercontent.com/u/10397574?v=3><br>Suvojit Manna(<a href=https://github.com/shin-migami>@shin-migami</a>)</td>
+    <td align=center><img width=100 src=https://avatars1.githubusercontent.com/u/4593736?v=3><br>Yunchih Chen (<a href=https://github.com/yunchih>@yunchih</a>)</td>
+    <td align=center><img width=100 src=https://avatars0.githubusercontent.com/u/7666511?v=3><br>Andrey Starodubtsev (<a href=https://github.com/andrey-starodubtsev>@andrey-starodubtsev</a>)</td>
+    <td align=center><img width=100 src=https://avatars2.githubusercontent.com/u/8580742?v=><br>T K Sourabh (<a href=https://github.com/sourabhtk37>@sourabhtk37</a>)</td>
+  </tr>
+</table>
