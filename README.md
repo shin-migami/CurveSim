@@ -41,3 +41,14 @@ Enter Options :
 9 - Print Pipeline Throughput
 0 - Exit
 ```
+
+## Contributors
+
+```
+1 - Shin Migami
+2 - Yunchih
+3 - Andrey-Starodubtsev
+
+```
+
+
