@@ -47,8 +47,8 @@ void ReserveTable::calc_ICV(void)
 	//that (i) is a forbidden latency.Thus (i)th bit is set
 	//in the Initial Collision Vector
 
-	std::bitset<STATES> slideVector,
-						checkVector;
+	std::bitset<STATES> slideVector,checkVector;
+	
 	icvLen = 0;
 	for (size_t i = 0; i < row; i++)
 	//Repeat for all stages
