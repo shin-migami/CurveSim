@@ -54,8 +54,7 @@ void CycleFinder::dfs(const Graph& G,
 		if (!onStack[w] && !ignore[w])
 		{
 			c.add_edge(edge);
-			std::pair<std::bitset<STATES>, size_t> e(edge.to_state(),
-													 edge.to());
+			std::pair<std::bitset<STATES>, size_t> e(edge.to_state(),edge.to());
 			//Traverse adjacent node recusively
 			dfs(G, e, fromV, c);
 		}
