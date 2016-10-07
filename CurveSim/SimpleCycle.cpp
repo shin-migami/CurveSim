@@ -11,7 +11,7 @@ SimpleCycle::SimpleCycle()
 }
 
 //Return true if cycle is formed
-bool SimpleCycle::is_cycle(void)  {	return loaded; }
+bool SimpleCycle::is_cycle(void){return loaded;}
 
 //Add Edge to Cycle
 //Check if Tail and Head of Cycle are Same

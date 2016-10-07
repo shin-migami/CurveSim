@@ -70,9 +70,8 @@ int main()
 	std::make_heap(pq2.begin(), pq2.end(), SimpleCycle());
 	std::cout << pq2.front().to_string() << std::endl;
 
-	std::priority_queue<SimpleCycle,
-						std::vector<SimpleCycle>,
-						SimpleCycle> pq;
+	std::priority_queue<SimpleCycle,std::vector<SimpleCycle>,SimpleCycle> pq;
+	
 	pq.push(cycle1);
 	pq.push(cycle2);
 	pq.push(cycle4);
